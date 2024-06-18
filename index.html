@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ค่าเหล้า Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="calculator">
+        <h1>ค่าเหล้า Calculator</h1>
+        <div id="step1">
+            <h2>Step 1: ใส่ราคาตามบิล</h2>
+            <div id="promotions">
+                <div class="promotion">
+                    <input type="number" placeholder="เบียร์(ขวด)" class="bottle">
+                    <input type="number" placeholder="ราคารวม" class="bottle-price">
+                    <input type="number" placeholder="เบียร์(โปร)" class="pro">
+                    <input type="number" placeholder="ราคารวม" class="pro-price">
+                    <input type="number" placeholder="เหล้า(กลม)" class="brundy">
+                    <input type="number" placeholder="ราคารวม" class="brundy-price">
+                    <input type="number" placeholder="เหล้า(แบน)" class="brundy2">
+                    <input type="number" placeholder="ราคารวม" class="brundy2-price">
+                    <input type="number" placeholder="มิกเซอร์" class="mixer">
+                    <input type="number" placeholder="ราคารวม" class="mixer-price">
+                    <input type="number" placeholder="น้ำแข็ง" class="ice">
+                    <input type="number" placeholder="ราคารวม" class="ice-price">
+                    <input type="number" placeholder="น้ำเปล่า" class="water">
+                    <input type="number" placeholder="ราคารวม" class="water-price">
+                    <input type="number" placeholder="ของว่าง" class="snacks">
+                    <input type="number" placeholder="ราคารวม" class="snacks-price">
+                </div>
+            </div>
+            <button id="nextStep">Next Step</button>
+        </div>
+        
+        <div id="step2" style="display:none;">
+            <h2>Step 2: ใส่จำนวนคน</h2>
+            <input type="number" id="numPeople" placeholder="Number of People">
+            <button id="generatePeople">Generate</button>
+        </div>
+        
+        <div id="step3" style="display:none;">
+            <h2>Step 3: ใครกินไร</h2>
+            <div id="peopleList"></div>
+            <button id="calculate">Calculate</button>
+        </div>
+        
+        <div id="result" style="display:none;">
+            <h2>Result</h2>
+            <div id="personCosts"></div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items to the top so scrolling works properly */
+    height: 100vh;
+    overflow-y: auto; /* Enable scrolling on the body */
+}
+
+#calculator {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 300px;
+    max-height: 100vh; /* Ensure it doesn't go beyond the viewport height */
+    overflow-y: auto; /* Enable scrolling within the calculator div */
+}
+
+h1, h2 {
+    margin-top: 0;
+}
+
+button {
+    margin-top: 10px;
+}
+
+input {
+    margin: 5px 0;
+}
+
+.amount {
+    margin-bottom: 20px;
+}
+
+.person-name {
+    width: calc(100% - 20px);
+    padding: 5px;
+    margin: 5px 0;
+}
