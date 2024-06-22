@@ -5,9 +5,9 @@ body {
     padding: 0;
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Align items to the top so scrolling works properly */
+    align-items: flex-start;
     height: 100vh;
-    overflow-y: auto; /* Enable scrolling on the body */
+    overflow-y: auto;
 }
 
 #calculator {
@@ -15,21 +15,27 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    width: 300px;
-    max-height: 100vh; /* Ensure it doesn't go beyond the viewport height */
-    overflow-y: auto; /* Enable scrolling within the calculator div */
+    width: 90%; /* Adjusted width for better display on mobile */
+    max-width: 500px; /* Limit the width on larger screens */
+    max-height: 100vh;
+    overflow-y: auto;
 }
 
 h1, h2 {
     margin-top: 0;
+    text-align: center; /* Center-align the headings */
 }
 
 button {
     margin-top: 10px;
+    width: 100%; /* Make the button full width */
 }
 
 input {
     margin: 5px 0;
+    width: calc(100% - 20px); /* Full width with some padding */
+    padding: 10px; /* Add padding for better touch targets */
+    box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
 }
 
 .amount {
@@ -38,6 +44,15 @@ input {
 
 .person-name {
     width: calc(100% - 20px);
-    padding: 5px;
+    padding: 10px; /* Add padding for better touch targets */
     margin: 5px 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.promotion {
+    margin-bottom: 20px; /* Add spacing between promotions */
 }
