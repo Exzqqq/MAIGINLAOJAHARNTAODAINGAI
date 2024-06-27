@@ -23,57 +23,57 @@ document.addEventListener('DOMContentLoaded', () => {
                     const bottleCount = parseInt((promo.querySelector('.bottle') as HTMLInputElement).value) || 0;
                     for (let j = 0; j < bottleCount; j++) {
                         personDiv.innerHTML += `<label>
-                                                <input type="checkbox" data-index="${index}" data-type="bottle">
-                                                Bottle ${j + 1}
-                                              </label><br>`;
+                                                    <input type="checkbox" data-index="${index}" data-type="เบียร์ขวดที่">
+                                                    เบียร์ขวดที่ ${j + 1}
+                                                </label><br>`;
                     }
                     const proCount = parseInt((promo.querySelector('.pro') as HTMLInputElement).value) || 0;
                     for (let j = 0; j < proCount; j++) {
                         personDiv.innerHTML += `<label>
-                                                <input type="checkbox" data-index="${index}" data-type="pro">
-                                                Pro ${j + 1}
+                                                <input type="checkbox" data-index="${index}" data-type="เบียร์โปรที่">
+                                                เบียร์โปรที่ ${j + 1}
                                               </label><br>`;
                     }
                     const brundyCount = parseInt((promo.querySelector('.brundy') as HTMLInputElement).value) || 0;
                     for (let j = 0; j < brundyCount; j++) {
                         personDiv.innerHTML += `<label>
-                                                <input type="checkbox" data-index="${index}" data-type="brundy">
-                                                Brundy ${j + 1}
+                                                <input type="checkbox" data-index="${index}" data-type="เหล้าขวดที่">
+                                                เหล้าขวดที่ ${j + 1}
                                               </label><br>`;
                     }
                     const brundy2Count = parseInt((promo.querySelector('.brundy2') as HTMLInputElement).value) || 0;
                     for (let j = 0; j < brundy2Count; j++) {
                         personDiv.innerHTML += `<label>
-                                                <input type="checkbox" data-index="${index}" data-type="brundy2">
-                                                Brundy2 ${j + 1}
+                                                <input type="checkbox" data-index="${index}" data-type="เหล้าโปรที่">
+                                                เหล้าโปรที่ ${j + 1}
                                               </label><br>`;
                     }
                     const mixerCount = parseInt((promo.querySelector('.mixer') as HTMLInputElement).value) || 0;
                     for (let j = 0; j < mixerCount; j++) {
                         personDiv.innerHTML += `<label>
-                                                <input type="checkbox" data-index="${index}" data-type="mixer">
-                                                Mixer ${j + 1}
+                                                <input type="checkbox" data-index="${index}" data-type="มิกเซอร์">
+                                                มิกเซอร์ ${j + 1}
                                               </label><br>`;
                     }
                     const iceCount = parseInt((promo.querySelector('.ice') as HTMLInputElement).value) || 0;
                     for (let j = 0; j < iceCount; j++) {
                         personDiv.innerHTML += `<label>
-                                                <input type="checkbox" data-index="${index}" data-type="ice">
-                                                Ice ${j + 1}
+                                                <input type="checkbox" data-index="${index}" data-type="น้ำแข็ง">
+                                                น้ำแข็ง ${j + 1}
                                               </label><br>`;
                     }
                     const waterCount = parseInt((promo.querySelector('.water') as HTMLInputElement).value) || 0;
                     for (let j = 0; j < waterCount; j++) {
                         personDiv.innerHTML += `<label>
-                                                <input type="checkbox" data-index="${index}" data-type="water">
-                                                Water ${j + 1}
+                                                <input type="checkbox" data-index="${index}" data-type="น้ำเปล่า">
+                                                น้ำเปล่า ${j + 1}
                                               </label><br>`;
                     }
                     const snacksCount = parseInt((promo.querySelector('.snacks') as HTMLInputElement).value) || 0;
                     for (let j = 0; j < snacksCount; j++) {
                         personDiv.innerHTML += `<label>
                                                 <input type="checkbox" data-index="${index}" data-type="snacks">
-                                                Snacks ${j + 1}
+                                                ของทานเล่น ${j + 1}
                                               </label><br>`;
                     }
                 });
@@ -83,6 +83,8 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('step3')!.style.display = 'block';
         }
     });
+    
+    
 
     document.getElementById('calculate')?.addEventListener('click', () => {
         const personCosts: { [key: string]: number } = {};

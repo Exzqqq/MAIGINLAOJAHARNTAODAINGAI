@@ -20,35 +20,35 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.querySelectorAll('.promotion').forEach(function (promo, index) {
                     var bottleCount = parseInt(promo.querySelector('.bottle').value) || 0;
                     for (var j = 0; j < bottleCount; j++) {
-                        personDiv.innerHTML += "<label>\n                                                <input type=\"checkbox\" data-index=\"".concat(index, "\" data-type=\"bottle\">\n                                                Bottle ").concat(j + 1, "\n                                              </label><br>");
+                        personDiv.innerHTML += "<label>\n                                                    <input type=\"checkbox\" data-index=\"".concat(index, "\" data-type=\"\u0E40\u0E1A\u0E35\u0E22\u0E23\u0E4C\u0E02\u0E27\u0E14\u0E17\u0E35\u0E48\">\n                                                    \u0E40\u0E1A\u0E35\u0E22\u0E23\u0E4C\u0E02\u0E27\u0E14\u0E17\u0E35\u0E48 ").concat(j + 1, "\n                                                </label><br>");
                     }
                     var proCount = parseInt(promo.querySelector('.pro').value) || 0;
                     for (var j = 0; j < proCount; j++) {
-                        personDiv.innerHTML += "<label>\n                                                <input type=\"checkbox\" data-index=\"".concat(index, "\" data-type=\"pro\">\n                                                Pro ").concat(j + 1, "\n                                              </label><br>");
+                        personDiv.innerHTML += "<label>\n                                                <input type=\"checkbox\" data-index=\"".concat(index, "\" data-type=\"\u0E40\u0E1A\u0E35\u0E22\u0E23\u0E4C\u0E42\u0E1B\u0E23\u0E17\u0E35\u0E48\">\n                                                \u0E40\u0E1A\u0E35\u0E22\u0E23\u0E4C\u0E42\u0E1B\u0E23\u0E17\u0E35\u0E48 ").concat(j + 1, "\n                                              </label><br>");
                     }
                     var brundyCount = parseInt(promo.querySelector('.brundy').value) || 0;
                     for (var j = 0; j < brundyCount; j++) {
-                        personDiv.innerHTML += "<label>\n                                                <input type=\"checkbox\" data-index=\"".concat(index, "\" data-type=\"brundy\">\n                                                Brundy ").concat(j + 1, "\n                                              </label><br>");
+                        personDiv.innerHTML += "<label>\n                                                <input type=\"checkbox\" data-index=\"".concat(index, "\" data-type=\"\u0E40\u0E2B\u0E25\u0E49\u0E32\u0E02\u0E27\u0E14\u0E17\u0E35\u0E48\">\n                                                \u0E40\u0E2B\u0E25\u0E49\u0E32\u0E02\u0E27\u0E14\u0E17\u0E35\u0E48 ").concat(j + 1, "\n                                              </label><br>");
                     }
                     var brundy2Count = parseInt(promo.querySelector('.brundy2').value) || 0;
                     for (var j = 0; j < brundy2Count; j++) {
-                        personDiv.innerHTML += "<label>\n                                                <input type=\"checkbox\" data-index=\"".concat(index, "\" data-type=\"brundy2\">\n                                                Brundy2 ").concat(j + 1, "\n                                              </label><br>");
+                        personDiv.innerHTML += "<label>\n                                                <input type=\"checkbox\" data-index=\"".concat(index, "\" data-type=\"\u0E40\u0E2B\u0E25\u0E49\u0E32\u0E42\u0E1B\u0E23\u0E17\u0E35\u0E48\">\n                                                \u0E40\u0E2B\u0E25\u0E49\u0E32\u0E42\u0E1B\u0E23\u0E17\u0E35\u0E48 ").concat(j + 1, "\n                                              </label><br>");
                     }
                     var mixerCount = parseInt(promo.querySelector('.mixer').value) || 0;
                     for (var j = 0; j < mixerCount; j++) {
-                        personDiv.innerHTML += "<label>\n                                                <input type=\"checkbox\" data-index=\"".concat(index, "\" data-type=\"mixer\">\n                                                Mixer ").concat(j + 1, "\n                                              </label><br>");
+                        personDiv.innerHTML += "<label>\n                                                <input type=\"checkbox\" data-index=\"".concat(index, "\" data-type=\"\u0E21\u0E34\u0E01\u0E40\u0E0B\u0E2D\u0E23\u0E4C\">\n                                                \u0E21\u0E34\u0E01\u0E40\u0E0B\u0E2D\u0E23\u0E4C ").concat(j + 1, "\n                                              </label><br>");
                     }
                     var iceCount = parseInt(promo.querySelector('.ice').value) || 0;
                     for (var j = 0; j < iceCount; j++) {
-                        personDiv.innerHTML += "<label>\n                                                <input type=\"checkbox\" data-index=\"".concat(index, "\" data-type=\"ice\">\n                                                Ice ").concat(j + 1, "\n                                              </label><br>");
+                        personDiv.innerHTML += "<label>\n                                                <input type=\"checkbox\" data-index=\"".concat(index, "\" data-type=\"\u0E19\u0E49\u0E33\u0E41\u0E02\u0E47\u0E07\">\n                                                \u0E19\u0E49\u0E33\u0E41\u0E02\u0E47\u0E07 ").concat(j + 1, "\n                                              </label><br>");
                     }
                     var waterCount = parseInt(promo.querySelector('.water').value) || 0;
                     for (var j = 0; j < waterCount; j++) {
-                        personDiv.innerHTML += "<label>\n                                                <input type=\"checkbox\" data-index=\"".concat(index, "\" data-type=\"water\">\n                                                Water ").concat(j + 1, "\n                                              </label><br>");
+                        personDiv.innerHTML += "<label>\n                                                <input type=\"checkbox\" data-index=\"".concat(index, "\" data-type=\"\u0E19\u0E49\u0E33\u0E40\u0E1B\u0E25\u0E48\u0E32\">\n                                                \u0E19\u0E49\u0E33\u0E40\u0E1B\u0E25\u0E48\u0E32 ").concat(j + 1, "\n                                              </label><br>");
                     }
                     var snacksCount = parseInt(promo.querySelector('.snacks').value) || 0;
                     for (var j = 0; j < snacksCount; j++) {
-                        personDiv.innerHTML += "<label>\n                                                <input type=\"checkbox\" data-index=\"".concat(index, "\" data-type=\"snacks\">\n                                                Snacks ").concat(j + 1, "\n                                              </label><br>");
+                        personDiv.innerHTML += "<label>\n                                                <input type=\"checkbox\" data-index=\"".concat(index, "\" data-type=\"snacks\">\n                                                \u0E02\u0E2D\u0E07\u0E17\u0E32\u0E19\u0E40\u0E25\u0E48\u0E19 ").concat(j + 1, "\n                                              </label><br>");
                     }
                 });
                 peopleList.appendChild(personDiv);
