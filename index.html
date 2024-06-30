@@ -14,39 +14,60 @@
             <h2>Step 1: ใส่ราคาตามบิล</h2>
             <div id="promotions">
                 <div class="promotion">
-                    <input type="number" placeholder="เบียร์(ขวด)" class="bottle">
-                    <input type="number" placeholder="ราคารวม" class="bottle-price">
-                    <input type="number" placeholder="เบียร์(โปร)" class="pro">
-                    <input type="number" placeholder="ราคารวม" class="pro-price">
-                    <input type="number" placeholder="เหล้า(กลม)" class="brundy">
-                    <input type="number" placeholder="ราคารวม" class="brundy-price">
-                    <input type="number" placeholder="เหล้า(แบน)" class="brundy2">
-                    <input type="number" placeholder="ราคารวม" class="brundy2-price">
-                    <input type="number" placeholder="มิกเซอร์" class="mixer">
-                    <input type="number" placeholder="ราคารวม" class="mixer-price">
-                    <input type="number" placeholder="น้ำแข็ง" class="ice">
-                    <input type="number" placeholder="ราคารวม" class="ice-price">
-                    <input type="number" placeholder="น้ำเปล่า" class="water">
-                    <input type="number" placeholder="ราคารวม" class="water-price">
-                    <input type="number" placeholder="ของว่าง" class="snacks">
-                    <input type="number" placeholder="ราคารวม" class="snacks-price">
+                    <div class="input-group">
+                        <input type="number" placeholder="เบียร์(ขวด)" class="bottle">
+                        <input type="number" placeholder="ราคารวม" class="bottle-price">
+                    </div>
+                    <div class="input-group">
+                        <input type="number" placeholder="เบียร์(โปร)" class="pro">
+                        <input type="number" placeholder="ราคารวม" class="pro-price">
+                    </div>
+                    <div class="input-group">
+                        <input type="number" placeholder="เหล้า(กลม)" class="brundy">
+                        <input type="number" placeholder="ราคารวม" class="brundy-price">
+                    </div>
+                    <div class="input-group">
+                        <input type="number" placeholder="เหล้า(แบน)" class="brundy2">
+                        <input type="number" placeholder="ราคารวม" class="brundy2-price">
+                    </div>
+                    <div class="input-group">
+                        <input type="number" placeholder="มิกเซอร์" class="mixer">
+                        <input type="number" placeholder="ราคารวม" class="mixer-price">
+                    </div>
+                    <div class="input-group">
+                        <input type="number" placeholder="น้ำแข็ง" class="ice">
+                        <input type="number" placeholder="ราคารวม" class="ice-price">
+                    </div>
+                    <div class="input-group">
+                        <input type="number" placeholder="น้ำเปล่า" class="water">
+                        <input type="number" placeholder="ราคารวม" class="water-price">
+                    </div>
+                    <div class="input-group">
+                        <input type="number" placeholder="ของว่าง" class="snacks">
+                        <input type="number" placeholder="ราคารวม" class="snacks-price">
+                    </div>
+                    <div class="input-group">
+                        <input type="text" placeholder="อื่นๆ" class="others">
+                        <input type="number" placeholder="จำนวน" class="others-quantity">
+                        <input type="number" placeholder="ราคารวม" class="others-price">
+                    </div>
                 </div>
             </div>
             <button id="nextStep">Next Step</button>
         </div>
-        
+
         <div id="step2" style="display:none;">
             <h2>Step 2: ใส่จำนวนคน</h2>
             <input type="number" id="numPeople" placeholder="Number of People">
             <button id="generatePeople">Generate</button>
         </div>
-        
+
         <div id="step3" style="display:none;">
             <h2>Step 3: ใครกินอะไร?</h2>
             <div id="peopleList"></div>
             <button id="calculate">Calculate</button>
         </div>
-        
+
         <div id="result" style="display:none;">
             <h2>ผลลัพธ์</h2>
             <div id="personCosts"></div>

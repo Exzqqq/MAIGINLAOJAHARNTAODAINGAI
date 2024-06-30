@@ -76,6 +76,16 @@ document.addEventListener('DOMContentLoaded', () => {
                                                 ของทานเล่น ${j + 1}
                                               </label><br>`;
                     }
+                    const others = (promo.querySelector('.others') as HTMLInputElement).value;
+                    const othersQuantity = parseInt((promo.querySelector('.others-quantity') as HTMLInputElement).value) || 0;
+                    if (others && othersQuantity > 0) {
+                        for (let j = 0; j < othersQuantity; j++) {
+                            personDiv.innerHTML += `<label>
+                                                    <input type="checkbox" data-index="${index}" data-type="อื่นๆ" data-item="${others}">
+                                                    ${others} ${j + 1}
+                                                  </label><br>`;
+                        }
+                    }
                 });
                 peopleList.appendChild(personDiv);
             }
@@ -123,6 +133,11 @@ document.addEventListener('DOMContentLoaded', () => {
                                 break;
                             case 'snacks':
                                 price = parseFloat((promotion.querySelector('.snacks-price') as HTMLInputElement).value) / parseFloat((promotion.querySelector('.snacks') as HTMLInputElement).value) || 0;
+                                break;
+                            case 'อื่นๆ':
+                                const othersPrice = parseFloat((promotion.querySelector('.others-price') as HTMLInputElement).value) || 0;
+                                const othersQuantity = parseFloat((promotion.querySelector('.others-quantity') as HTMLInputElement).value) || 1;
+                                price = othersPrice / othersQuantity;
                                 break;
                         }
                     }

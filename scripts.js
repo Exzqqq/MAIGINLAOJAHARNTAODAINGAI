@@ -50,6 +50,13 @@ document.addEventListener('DOMContentLoaded', function () {
                     for (var j = 0; j < snacksCount; j++) {
                         personDiv.innerHTML += "<label>\n                                                <input type=\"checkbox\" data-index=\"".concat(index, "\" data-type=\"snacks\">\n                                                \u0E02\u0E2D\u0E07\u0E17\u0E32\u0E19\u0E40\u0E25\u0E48\u0E19 ").concat(j + 1, "\n                                              </label><br>");
                     }
+                    var others = promo.querySelector('.others').value;
+                    var othersQuantity = parseInt(promo.querySelector('.others-quantity').value) || 0;
+                    if (others && othersQuantity > 0) {
+                        for (var j = 0; j < othersQuantity; j++) {
+                            personDiv.innerHTML += "<label>\n                                                    <input type=\"checkbox\" data-index=\"".concat(index, "\" data-type=\"\u0E2D\u0E37\u0E48\u0E19\u0E46\" data-item=\"").concat(others, "\">\n                                                    ").concat(others, " ").concat(j + 1, "\n                                                  </label><br>");
+                        }
+                    }
                 });
                 peopleList.appendChild(personDiv);
             };
@@ -97,6 +104,11 @@ document.addEventListener('DOMContentLoaded', function () {
                                 break;
                             case 'snacks':
                                 price = parseFloat(promotion.querySelector('.snacks-price').value) / parseFloat(promotion.querySelector('.snacks').value) || 0;
+                                break;
+                            case 'อื่นๆ':
+                                var othersPrice = parseFloat(promotion.querySelector('.others-price').value) || 0;
+                                var othersQuantity = parseFloat(promotion.querySelector('.others-quantity').value) || 1;
+                                price = othersPrice / othersQuantity;
                                 break;
                         }
                     }
