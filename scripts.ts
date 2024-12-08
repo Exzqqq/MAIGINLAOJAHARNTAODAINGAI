@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Navigate to the next step
     document.getElementById('nextStep')?.addEventListener('click', () => {
         const step1 = document.getElementById('step1');
         const step2 = document.getElementById('step2');
@@ -8,8 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Generate people and their items
     document.getElementById('generatePeople')?.addEventListener('click', () => {
-        const numPeople = parseInt((document.getElementById('numPeople') as HTMLInputElement).value);
+        const numPeople = parseInt((document.getElementById('numPeople') as HTMLInputElement)?.value || '0');
         const peopleList = document.getElementById('peopleList');
         if (peopleList) {
             peopleList.innerHTML = '';
@@ -20,71 +22,43 @@ document.addEventListener('DOMContentLoaded', () => {
                                         <input type="text" value="Person ${i + 1}" class="person-name">
                                       </h3>`;
                 document.querySelectorAll('.promotion').forEach((promo, index) => {
-                    const bottleCount = parseInt((promo.querySelector('.bottle') as HTMLInputElement).value) || 0;
-                    for (let j = 0; j < bottleCount; j++) {
-                        personDiv.innerHTML += `<label>
-                                                    <input type="checkbox" data-index="${index}" data-type="เบียร์ขวดที่">
-                                                    เบียร์ขวดที่ ${j + 1}
-                                                </label><br>`;
-                    }
-                    const proCount = parseInt((promo.querySelector('.pro') as HTMLInputElement).value) || 0;
-                    for (let j = 0; j < proCount; j++) {
-                        personDiv.innerHTML += `<label>
-                                                <input type="checkbox" data-index="${index}" data-type="เบียร์โปรที่">
-                                                เบียร์โปรที่ ${j + 1}
-                                              </label><br>`;
-                    }
-                    const brundyCount = parseInt((promo.querySelector('.brundy') as HTMLInputElement).value) || 0;
-                    for (let j = 0; j < brundyCount; j++) {
-                        personDiv.innerHTML += `<label>
-                                                <input type="checkbox" data-index="${index}" data-type="เหล้าขวดที่">
-                                                เหล้าขวดที่ ${j + 1}
-                                              </label><br>`;
-                    }
-                    const brundy2Count = parseInt((promo.querySelector('.brundy2') as HTMLInputElement).value) || 0;
-                    for (let j = 0; j < brundy2Count; j++) {
-                        personDiv.innerHTML += `<label>
-                                                <input type="checkbox" data-index="${index}" data-type="เหล้าโปรที่">
-                                                เหล้าโปรที่ ${j + 1}
-                                              </label><br>`;
-                    }
-                    const mixerCount = parseInt((promo.querySelector('.mixer') as HTMLInputElement).value) || 0;
-                    for (let j = 0; j < mixerCount; j++) {
-                        personDiv.innerHTML += `<label>
-                                                <input type="checkbox" data-index="${index}" data-type="มิกเซอร์">
-                                                มิกเซอร์ ${j + 1}
-                                              </label><br>`;
-                    }
-                    const iceCount = parseInt((promo.querySelector('.ice') as HTMLInputElement).value) || 0;
-                    for (let j = 0; j < iceCount; j++) {
-                        personDiv.innerHTML += `<label>
-                                                <input type="checkbox" data-index="${index}" data-type="น้ำแข็ง">
-                                                น้ำแข็ง ${j + 1}
-                                              </label><br>`;
-                    }
-                    const waterCount = parseInt((promo.querySelector('.water') as HTMLInputElement).value) || 0;
-                    for (let j = 0; j < waterCount; j++) {
-                        personDiv.innerHTML += `<label>
-                                                <input type="checkbox" data-index="${index}" data-type="น้ำเปล่า">
-                                                น้ำเปล่า ${j + 1}
-                                              </label><br>`;
-                    }
-                    const snacksCount = parseInt((promo.querySelector('.snacks') as HTMLInputElement).value) || 0;
-                    for (let j = 0; j < snacksCount; j++) {
-                        personDiv.innerHTML += `<label>
-                                                <input type="checkbox" data-index="${index}" data-type="snacks">
-                                                ของทานเล่น ${j + 1}
-                                              </label><br>`;
-                    }
-                    const others = (promo.querySelector('.others') as HTMLInputElement).value;
-                    const othersQuantity = parseInt((promo.querySelector('.others-quantity') as HTMLInputElement).value) || 0;
-                    if (others && othersQuantity > 0) {
-                        for (let j = 0; j < othersQuantity; j++) {
+                    const createCheckboxes = (type: string, label: string, count: number) => {
+                        for (let j = 0; j < count; j++) {
                             personDiv.innerHTML += `<label>
-                                                    <input type="checkbox" data-index="${index}" data-type="อื่นๆ" data-item="${others}">
-                                                    ${others} ${j + 1}
-                                                  </label><br>`;
+                                                        <input type="checkbox" data-index="${index}" data-type="${type}">
+                                                        ${label} ${j + 1}
+                                                    </label><br>`;
                         }
+                    };
+
+                    const bottleCount = parseInt((promo.querySelector('.bottle') as HTMLInputElement)?.value || '0');
+                    createCheckboxes('bottle', 'เบียร์ขวดที่', bottleCount);
+
+                    const proCount = parseInt((promo.querySelector('.pro') as HTMLInputElement)?.value || '0');
+                    createCheckboxes('pro', 'เบียร์โปรที่', proCount);
+
+                    const brundyCount = parseInt((promo.querySelector('.brundy') as HTMLInputElement)?.value || '0');
+                    createCheckboxes('brundy', 'เหล้าขวดที่', brundyCount);
+
+                    const brundy2Count = parseInt((promo.querySelector('.brundy2') as HTMLInputElement)?.value || '0');
+                    createCheckboxes('brundy2', 'เหล้าโปรที่', brundy2Count);
+
+                    const mixerCount = parseInt((promo.querySelector('.mixer') as HTMLInputElement)?.value || '0');
+                    createCheckboxes('mixer', 'มิกเซอร์', mixerCount);
+
+                    const iceCount = parseInt((promo.querySelector('.ice') as HTMLInputElement)?.value || '0');
+                    createCheckboxes('ice', 'น้ำแข็ง', iceCount);
+
+                    const waterCount = parseInt((promo.querySelector('.water') as HTMLInputElement)?.value || '0');
+                    createCheckboxes('water', 'น้ำเปล่า', waterCount);
+
+                    const snacksCount = parseInt((promo.querySelector('.snacks') as HTMLInputElement)?.value || '0');
+                    createCheckboxes('snacks', 'ของทานเล่น', snacksCount);
+
+                    const others = (promo.querySelector('.others') as HTMLInputElement)?.value;
+                    const othersQuantity = parseInt((promo.querySelector('.others-quantity') as HTMLInputElement)?.value || '0');
+                    if (others && othersQuantity > 0) {
+                        createCheckboxes('others', others, othersQuantity);
                     }
                 });
                 peopleList.appendChild(personDiv);
@@ -93,51 +67,59 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('step3')!.style.display = 'block';
         }
     });
-    
-    
 
+    // Calculate costs
     document.getElementById('calculate')?.addEventListener('click', () => {
         const personCosts: { [key: string]: number } = {};
         const peopleList = document.getElementById('peopleList');
         if (peopleList) {
             peopleList.querySelectorAll('.person').forEach(person => {
-                const personName = (person.querySelector('.person-name') as HTMLInputElement).value;
+                const personName = (person.querySelector('.person-name') as HTMLInputElement)?.value || 'Unknown';
                 personCosts[personName] = 0;
+
                 person.querySelectorAll('input[type="checkbox"]:checked').forEach(checkbox => {
-                    const promoIndex = parseInt((checkbox as HTMLInputElement).getAttribute('data-index') || '0');
-                    const type = (checkbox as HTMLInputElement).getAttribute('data-type');
+                    const promoIndex = parseInt((checkbox as HTMLInputElement)?.getAttribute('data-index') || '0');
+                    const type = (checkbox as HTMLInputElement)?.getAttribute('data-type');
                     const promotion = document.querySelectorAll('.promotion')[promoIndex];
                     let price = 0;
+
                     if (type && promotion) {
+                        const calculatePrice = (priceFieldSelector: string, quantitySelector: string) => {
+                            const priceField = parseFloat((promotion.querySelector(priceFieldSelector) as HTMLInputElement)?.value || '0');
+                            const quantity = parseFloat((promotion.querySelector(quantitySelector) as HTMLInputElement)?.value || '1');
+                            return quantity > 0 ? priceField / quantity : 0;
+                        };
+
                         switch (type) {
                             case 'bottle':
-                                price = parseFloat((promotion.querySelector('.bottle-price') as HTMLInputElement).value) / parseFloat((promotion.querySelector('.bottle') as HTMLInputElement).value) || 0;
+                                price = calculatePrice('.bottle-price', '.bottle');
                                 break;
                             case 'pro':
-                                price = parseFloat((promotion.querySelector('.pro-price') as HTMLInputElement).value) / parseFloat((promotion.querySelector('.pro') as HTMLInputElement).value) || 0;
+                                price = calculatePrice('.pro-price', '.pro');
                                 break;
                             case 'brundy':
-                                price = parseFloat((promotion.querySelector('.brundy-price') as HTMLInputElement).value) / parseFloat((promotion.querySelector('.brundy') as HTMLInputElement).value) || 0;
+                                price = calculatePrice('.brundy-price', '.brundy');
                                 break;
                             case 'brundy2':
-                                price = parseFloat((promotion.querySelector('.brundy2-price') as HTMLInputElement).value) / parseFloat((promotion.querySelector('.brundy2') as HTMLInputElement).value) || 0;
+                                price = calculatePrice('.brundy2-price', '.brundy2');
                                 break;
                             case 'mixer':
-                                price = parseFloat((promotion.querySelector('.mixer-price') as HTMLInputElement).value) / parseFloat((promotion.querySelector('.mixer') as HTMLInputElement).value) || 0;
+                                price = calculatePrice('.mixer-price', '.mixer');
                                 break;
                             case 'ice':
-                                price = parseFloat((promotion.querySelector('.ice-price') as HTMLInputElement).value) / parseFloat((promotion.querySelector('.ice') as HTMLInputElement).value) || 0;
+                                price = calculatePrice('.ice-price', '.ice');
                                 break;
                             case 'water':
-                                price = parseFloat((promotion.querySelector('.water-price') as HTMLInputElement).value) / parseFloat((promotion.querySelector('.water') as HTMLInputElement).value) || 0;
+                                price = calculatePrice('.water-price', '.water');
                                 break;
                             case 'snacks':
-                                price = parseFloat((promotion.querySelector('.snacks-price') as HTMLInputElement).value) / parseFloat((promotion.querySelector('.snacks') as HTMLInputElement).value) || 0;
+                                price = calculatePrice('.snacks-price', '.snacks');
                                 break;
-                            case 'อื่นๆ':
-                                const othersPrice = parseFloat((promotion.querySelector('.others-price') as HTMLInputElement).value) || 0;
-                                const othersQuantity = parseFloat((promotion.querySelector('.others-quantity') as HTMLInputElement).value) || 1;
-                                price = othersPrice / othersQuantity;
+                            case 'others':
+                                price = calculatePrice('.others-price', '.others-quantity');
+                                break;
+                            default:
+                                console.warn('Unknown type:', type);
                                 break;
                         }
                     }
